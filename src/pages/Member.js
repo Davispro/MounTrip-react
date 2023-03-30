@@ -10,6 +10,7 @@ import FavoriteContent from '../components/LaiFavoriteContent'
 import MobileDropdown from '../components/LaiMobileDropdown'
 import MemberProfile from '../components/LaiMemberProfile'
 import { MemberContext } from './../contexts/MemberContext.js'
+import { LoginContext } from '../App'
 import AuthContext from './../contexts/AuthContexts.js'
 import {
   MEMBER_DATA,
@@ -55,23 +56,7 @@ export default function Member() {
 
   const authString = localStorage.getItem('myAuth')
   const auth = JSON.parse(authString)
-  //抓資料的函式，全部人的資料都在這個api
-  // const getUser = async (req, res) => {
-  //   try {
-  //     const res = await axios.get(MEMBER_DATA)
-  //     const currentUserId = myAuth.sid
-  //     const currentUserData = res.data.rows[currentUserId - 1]
-  //     setUser(currentUserData)
-  //     console.log('member-data-rows:', res.data.rows)
-  //     console.log('user:', currentUserData)
-  //     // return currentUserData
-  //   } catch (error) {
-  //     console.log('u:', user)
-  //     // console.log()
 
-  //     return []
-  //   }
-  // }
   //抓資料的函式，只抓登入會員的資料
   const getUser2 = async (req, res) => {
     const userString = localStorage.getItem('myAuth')
@@ -245,7 +230,6 @@ export default function Member() {
     setImage(img)
   }
 
-
   // yichun's coupon
   const {
     newCoupon,
@@ -266,7 +250,12 @@ export default function Member() {
     </h4>`
   const playedContent = `<h4>您已經領取過優惠券啦！</h4>`
 
+  const { setMapInteraction } = useContext(LoginContext)
+
   useEffect(() => {
+    // kexin navbar調整
+
+    setMapInteraction(0)
     const fetchData = async () => {
       // 查看登入前是否有玩遊戲
       const loginPlay = localStorage.getItem('test')
