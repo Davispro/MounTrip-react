@@ -230,12 +230,12 @@ function DavisTrailsRating(props) {
                   <p className="mb-0">個人已評論</p>
                 </div>
               </div>
-              <div className="col"></div>
+              {/* <div className="col"></div> */}
             </div>
           ))}
 
           {/* right-card */}
-          <div className="col d-flex flex-column">
+          <div className={`col d-flex flex-column ${styles.right_card_mo}`}>
             {/* right-card * n */}
             {comdata.length
               ? comdata.map((comdata) => (
@@ -245,7 +245,9 @@ function DavisTrailsRating(props) {
                     {/* head picture (left col-1) */}
                     <div className={`col-1 ${styles.rounded_circle}`}></div>
 
-                    <div className="col d-flex flex-column ">
+                    <div
+                      className={`col d-flex flex-column ${styles.right_commont}`}
+                    >
                       {/* level1 */}
                       <div className="col d-flex flex-row mb-3">
                         <h5 className="mb-0 me-3">
@@ -273,70 +275,6 @@ function DavisTrailsRating(props) {
                       </div>
                       {/* level2 FIXME:星數 */}
                       <div className="col d-flex flex-row mb-3">
-                        {/* <div
-                          className={`col-5 col-lg-1 d-flex flex-row ${styles.star}`}
-                        >
-                          <svg
-                            width="16"
-                            height="17"
-                            viewBox="0 0 16 17"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#FFCB45"
-                            />
-                          </svg>
-                          <svg
-                            width="16"
-                            height="17"
-                            viewBox="0 0 16 17"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#FFCB45"
-                            />
-                          </svg>
-                          <svg
-                            width="16"
-                            height="17"
-                            viewBox="0 0 16 17"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#FFCB45"
-                            />
-                          </svg>
-                          <svg
-                            width="16"
-                            height="17"
-                            viewBox="0 0 16 17"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#FFCB45"
-                            />
-                          </svg>
-                          <svg
-                            width="16"
-                            height="17"
-                            viewBox="0 0 16 17"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#FFCB45"
-                            />
-                          </svg>
-                        </div> */}
                         <img
                           className={`${styles['me-13']}`}
                           src={`images/kexin/svg/Stars${comdata.score}.svg`}
@@ -347,12 +285,11 @@ function DavisTrailsRating(props) {
                           src="images/kexin/svg/dot.svg"
                           alt=""
                         />
-                        <div className="col-2">
+                        <div className="col-lg-2">
                           <p className="mb-0 pb-1">
                             {comdata.rate_date.slice(0, 10)}
                           </p>
                         </div>
-                        <div className="col"></div>
                       </div>
                       {/* level3 內文與圖片 */}
                       <div className="col d-flex flex-column flex-lg-row">

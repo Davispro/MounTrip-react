@@ -42,7 +42,7 @@ function DavisTrailsFilter() {
   })
 
   const { search } = useContext(SearchContext)
-  const { setMapInteraction} = useContext(LoginContext)
+  const { setMapInteraction } = useContext(LoginContext)
 
   useEffect(() => {
     setMapInteraction(0)
@@ -123,10 +123,25 @@ function DavisTrailsFilter() {
         {/* mobile_phone top FIXME: */}
         <div className={`d-lg-none flex-column m-2 ${styles.phone_container}`}>
           {/* mobile_phone top card */}
-          <DavisFilterMoTop />
+          <DavisFilterMoTop
+            data={data}
+            keywordpr={keywordpr}
+            startdatepr={startdatepr}
+            setKeywordpr={setKeywordpr}
+            setStartdatepr={setStartdatepr}
+            setEnddatepr={setEnddatepr}
+            setMaxpeplepr={setMaxpeplepr}
+          />
 
           {/* mobile_phone bottom  */}
-          <DavisFilterMoBo data={data} />
+          <DavisFilterMoBo
+            data={data}
+            keywordpr={keywordpr}
+            startdatepr={startdatepr}
+            enddatepr={enddatepr}
+            maxpeplepr={maxpeplepr}
+            filterByKeyword={filterByKeyword}
+          />
           {/*  phone_card*n */}
           {/* <div className={`d-flex flex-column ${styles.phone_card}`}>
             <div className={`${styles.text_re}`}>

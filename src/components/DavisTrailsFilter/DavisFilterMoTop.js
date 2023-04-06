@@ -1,12 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { addDays } from 'date-fns'
+import format from 'date-fns/format'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
-function DavisFilterMoTop() {
+function DavisFilterMoTop(props) {
+  const {
+    data,
+    keywordpr,
+    startdatepr,
+    setKeywordpr,
+    setStartdatepr,
+    setEnddatepr,
+    setMaxpeplepr,
+  } = props
+
+  const [keyword, setKeyword] = useState('')
+  const [startdate, setStartdate] = useState(format(new Date(), 'yyyy-MM-dd'))
+  const [enddate, setEnddate] = useState(new Date(2024, 12, 31))
+  const [inputText, setInputText] = useState('')
+  const [newstartdate, setNewstartdate] = useState(
+    format(new Date(1), 'yyyy-MM-dd')
+  )
+  const [newenddate, setNewenddate] = useState(format(new Date(), 'yyyy-MM-dd'))
+
+  const [peoplecount, setPeoplecount] = useState(2)
+
+  const [newpeoplecount, setNewpeoplecount] = useState()
+
+  useEffect(() => {
+    setKeywordpr(keyword)
+    setStartdatepr(startdate)
+    setEnddatepr(enddate)
+    setMaxpeplepr(peoplecount)
+  }, [keyword, startdate, enddate, peoplecount])
   return (
     <>
       <div className=" d-flex flex-row ">
         {/* mobile 目的地 */}
-        <div className="col-8 d-flex flex-column search pe-2">
+        <div className={`col d-flex flex-column ${styles.search}`}>
           <p className={`mb-0 ${styles.p_content}`}>目的地</p>
           <div className={`d-flex flex-row ${styles.input_with_icon}`}>
             <span className={`${styles.icon_span}`}>
@@ -33,12 +64,30 @@ function DavisFilterMoTop() {
               </svg>
             </span>
             <div className="">
-              <input className={`${styles.input_style}`} type="text" />
+              <input
+                className={`${styles.input_style}`}
+                type="text"
+                placeholder={keywordpr}
+                value={inputText}
+                onChange={(e) => {
+                  setInputText(e.target.value)
+
+                  // 如果使用者清除所有輸入時要回復為原本列表
+                  if (e.target.value === '') {
+                    setKeyword('')
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    setKeyword(inputText)
+                  }
+                }}
+              />
             </div>
           </div>
         </div>
         {/* mobile 人數 */}
-        <div className={`col-4 d-flex flex-column ${styles.search_count}`}>
+        {/* <div className={`col-4 d-flex flex-column ${styles.search_count}`}>
           <p className={`mb-0 ${styles.p_content}`}>人數</p>
           <div className={`d-flex flex-row ${styles.input_with_icon}`}>
             <span className={`col ${styles.icon_span}`}>
@@ -67,11 +116,10 @@ function DavisFilterMoTop() {
               </svg>
             </span>
             <div className="">
-              {/* FIXME: 點擊的按鈕跑掉了 */}
               <input className={`${styles.input_style}`} type="number" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={`d-flex flex-row ${styles.row_2_mb}`}>
         {/* mobile 出發日期 */}
@@ -115,6 +163,11 @@ function DavisFilterMoTop() {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
+                onChange={(event) => {
+                  const newDate = event.target.value
+                  setNewstartdate(newDate)
+                  console.log(event.target.value)
+                }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
@@ -163,15 +216,20 @@ function DavisFilterMoTop() {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
+                onChange={(event) => {
+                  const newDate = event.target.value
+                  setNewenddate(newDate)
+                }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
+                pseudo="-webkit-calendar-picker-indicator"
               />
             </div>
           </div>
         </div>
       </div>
-      <h5 className={`${styles.phone_sub_title}`}>「草嶺古道」的搜尋結果</h5>
+      {/* <h5 className={`${styles.phone_sub_title}`}>「草嶺古道」的搜尋結果</h5>
       <svg
         className={`${styles.vector_small}`}
         width="365"
@@ -262,7 +320,7 @@ function DavisFilterMoTop() {
             <rect width="360" height="28" fill="white" />
           </clipPath>
         </defs>
-      </svg>
+      </svg> */}
     </>
   )
 }

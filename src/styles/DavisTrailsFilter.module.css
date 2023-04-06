@@ -459,4 +459,14 @@ main .right_card {
     line-height: 130%;
     color: var(--mtgreen-1);
   }
+
+  .search{
+    width: 300px;
+    padding-bottom: 12px;
+  }
+
+  /* FIXME: */
+  footer{
+    display: none;
+}
 }

@@ -31,8 +31,6 @@ function DavisComFilterCardFilter(props) {
     setAlldata(response.data)
   }
 
-  // TODO:收藏按鈕
-
   const [collect, setCollect] = useState([])
 
   const toggleCollect = (data, trails_sid) => {

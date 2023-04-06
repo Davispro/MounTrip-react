@@ -70,13 +70,6 @@ function DavisFilterComRight(props) {
           </div>
         </div>
         {/* filter card */}
-        {/* <DavisComFilterCard
-          data={data}
-          filterByKeyword={filterByKeyword}
-          keywordpr={keywordpr}
-          datepickpr={datepickpr}
-        /> */}
-
         <DavisComFilterCardFilter
           data={data}
           filterByKeyword={filterByKeyword}
@@ -85,119 +78,6 @@ function DavisFilterComRight(props) {
           enddatepr={enddatepr}
           maxpeplepr={maxpeplepr}
         />
-
-        {/* pagination */}
-        {/* <div
-          className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
-        >
-          <nav
-            className={`${styles.pagination_nav}`}
-            aria-label=" Page navigation example"
-          >
-            <ul className="pagination ">
-              <li className={`page-item ${styles.li_margin}`}>
-                <Link
-                  className={`page-link ${styles.a_decoration}`}
-                  aria-label="Previous"
-                  to={`/trails-filter?page=${data.page - 1}`}
-                >
-                  {' '}
-                  <span aria-hidden="true">&laquo;</span>
-                </Link>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <Link
-                  className={`page-link fw-bold ${styles.a_decoration}`}
-                  aria-label="Previous"
-                  to={`/trails-filter?page=${1}`}
-                >
-                  1
-                </Link>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <Link
-                  className={`page-link fw-bold ${styles.a_decoration}`}
-                  aria-label="Previous"
-                  to={`/trails-filter?page=${data.page + 1}`}
-                >
-                  2
-                </Link>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <span className={`page-link fw-bold ${styles.a_decoration}`}>
-                  {' '}
-                  ...{' '}
-                </span>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <Link
-                  className={`page-link fw-bold ${styles.a_decoration}`}
-                  aria-label="Previous"
-                  to={`/trails-filter?page=${data.totalPages / 2}`}
-                >
-                  {data.totalPages / 2}
-                </Link>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <span className={`page-link fw-bold ${styles.a_decoration}`}>
-                  {' '}
-                  ...{' '}
-                </span>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <Link
-                  className={`page-link fw-bold ${styles.a_decoration}`}
-                  aria-label="Previous"
-                  to={`/trails-filter?page=${data.totalPages - 1}`}
-                >
-                  {data.totalPages - 1}
-                </Link>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <Link
-                  className={`page-link fw-bold ${styles.a_decoration}`}
-                  aria-label="Previous"
-                  to={`/trails-filter?page=${data.totalPages}`}
-                >
-                  {data.totalPages}
-                </Link>
-              </li>
-              <li className={`page-item ${styles.li_margin}`}>
-                <Link
-                  className={`page-link ${styles.a_decoration}`}
-                  aria-label="Next"
-                  to={`/trails-filter?page=${data.page + 1}`}
-                >
-                  {' '}
-                  <span aria-hidden="true">&raquo;</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div> */}
-        {/* pagination */}
-        {/* {[...Array(34)].map((v, i) => {
-          const p = data.page - 5 + i
-          if (p < 1 || p > data.totalPages) return null
-          let myClass = 'page-item'
-          if (p === data.page) {
-            myClass = 'page-item active'
-          }
-          return (
-            <li key={p}>
-              <Link
-                // to={`/trails-filter?page=${p}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  navigate(`?page=${p}`)
-                  console.log(p)
-                }}
-              >
-                {p}
-              </Link>
-            </li>
-          )
-        })} */}
       </div>
     </>
   )
