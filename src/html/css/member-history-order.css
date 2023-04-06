@@ -479,7 +479,7 @@ section{
 /* w:390px RWD */
 
 /* w:390px RWD */
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     section{
         width: 390px;
     }
@@ -503,14 +503,14 @@ section{
 }
 
 /* 使用者照片區 */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .sidebar{
         width: 360px;
         display: none;
     }
 }
 /* filter */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
 
     .sidebar-menu{
         display: none;
@@ -561,14 +561,14 @@ section{
     }
 
 }
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     .member-data{
         width: 360px;
     }  
 }
 
 /* card */
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     
     .order-card{
         padding-left: 16px;
@@ -659,7 +659,7 @@ section{
 }
 
 /* 折疊的內容RWD */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .dropdown-bar{
         margin-top: 6px;
         margin-bottom: 18px;

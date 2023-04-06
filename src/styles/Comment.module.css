@@ -345,15 +345,15 @@
 
 }
 
-/* w:390px RWD */
-@media screen and (max-width:390px){
+/* w:391px RWD */
+@media screen and (max-width:391px){
     section{
-        width: 390px;
+        width: 391px;
     }
     .grid-container{
         display: grid;
         width: 100%;
-        grid-template-columns: 390px ;
+        grid-template-columns: 391px ;
         grid-template-rows: 1fr ;
         gap:40px;
         padding-top: 120px;
@@ -370,14 +370,14 @@
 }
 
 /* 使用者照片區 */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .sidebar{
         width: 360px;
         display: none;
     }
 }
 /* filter */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
 
     .sidebar-menu{
         display: none;
@@ -433,14 +433,14 @@
     }
 
 }
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     .member-data{
         width: 360px;
     }  
 }
 
 /* card */
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     .comment-list{
         display: flex;
         flex-direction: column;
@@ -529,6 +529,6 @@
         padding: 16px;
     }
 }
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
  
 }

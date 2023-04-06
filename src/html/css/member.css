@@ -351,7 +351,7 @@ section{
 }
 
 /* w:390px RWD */
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     section{
         width: 390px;
     }
@@ -375,7 +375,7 @@ section{
 }
 
 /* 使用者照片區 */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .sidebar{
         width: 360px;
     }
@@ -471,7 +471,7 @@ section{
     
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
 
     .sidebar-menu{
         display: none;
@@ -492,7 +492,7 @@ section{
         height: 32px;
     }
 }
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     .member-data{
         width: 360px;
     }

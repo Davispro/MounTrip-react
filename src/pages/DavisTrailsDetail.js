@@ -26,7 +26,7 @@ import { format } from 'date-fns'
 export default function DavisTrailsDetail(rows) {
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
-  const { setMapInteraction} = useContext(LoginContext)
+  const { setMapInteraction } = useContext(LoginContext)
   // trails_data
 
   const [data, setData] = useState({
@@ -85,20 +85,20 @@ export default function DavisTrailsDetail(rows) {
 
   return (
     <>
+      {/*mobile top-img */}
+      <div className={`d-flex d-lg-none ${styles.top_img}`}>
+        <img
+          className="w-100"
+          src="/images/public_images/product_image/3-1.jpg"
+          alt=""
+        />
+      </div>
       {filterFromBatch(data.rows).map((r) => (
         <div
           key={r.sid}
           className={`d-flex flex-column ${styles.container_all}`}
         >
           <div className="col p-0">
-            {/* top-img FIXME: */}
-            <div className={`d-flex d-lg-none ${styles.top_img}`}>
-              <img
-                className="w-100"
-                src="/images/public_images/product_image/3-1.jpg"
-                alt=""
-              />
-            </div>
             <nav className={`${styles.bread}`} aria-label="breadcrumb">
               <ol className="breadcrumb ">
                 <li className="breadcrumb-item  ">
@@ -142,7 +142,7 @@ export default function DavisTrailsDetail(rows) {
             <div
               className={`d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column `}
             >
-              <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
+              <div className=" d-lg-flex flex-lg-row col mb-5 d-sm-flex flex-sm-column">
                 <DavisTrailsImgGroup
                   filterFromBatch={filterFromBatch}
                   data={data}
@@ -469,7 +469,9 @@ export default function DavisTrailsDetail(rows) {
                         alt=""
                       />
                     </div>
-                    <div className="d-flex flex-row justify-content-between">
+                    <div
+                      className={`d-flex flex-row  ${styles.img_wrap_three}`}
+                    >
                       <img
                         className={`${styles.img_cover_three}`}
                         src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
@@ -497,91 +499,7 @@ export default function DavisTrailsDetail(rows) {
                     data={data}
                     filterFromBatch={filterFromBatch}
                   />
-                  {/* <div className="d-none d-lg-flex flex-column "> */}
-                  {/* Count */}
-                  {/* <div className="col d-flex flex-row mb-2 justify-content-between">
-                      <div
-                        className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
-                      >
-                        <button
-                          onClick={() => {
-                            setCount(count - 1)
-                          }}
-                          className={`${styles.btn_style}`}
-                        >
-                          <svg
-                            width="24"
-                            height="25"
-                            viewBox="0 0 24 25"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M5 12.5H19"
-                              stroke="#6CBA7C"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
 
-                        <h3 className={`col mb-0 ${styles.count_style}`}>
-                          {count}
-                        </h3>
-                        <button
-                          onClick={() => {
-                            setCount(count + 1)
-                          }}
-                          className={`${styles.btn_style}`}
-                        >
-                          <svg
-                            width="24"
-                            height="25"
-                            viewBox="0 0 24 25"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M12 5.5V19.5"
-                              stroke="#6CBA7C"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M5 12.5H19"
-                              stroke="#6CBA7C"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                      <button className={`${styles.btn_style}`}>
-                        <svg
-                          width="35"
-                          height="35"
-                          viewBox="0 0 43 43"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M30.34 14.11C29.8292 13.599 29.2228 13.1936 28.5554 12.9171C27.8879 12.6405 27.1725 12.4982 26.45 12.4982C25.7275 12.4982 25.0121 12.6405 24.3446 12.9171C23.6772 13.1936 23.0708 13.599 22.56 14.11L21.5 15.17L20.44 14.11C19.4083 13.0783 18.009 12.4987 16.55 12.4987C15.091 12.4987 13.6917 13.0783 12.66 14.11C11.6283 15.1417 11.0487 16.541 11.0487 18C11.0487 19.459 11.6283 20.8583 12.66 21.89L13.72 22.95L21.5 30.73L29.28 22.95L30.34 21.89C30.851 21.3792 31.2563 20.7728 31.5329 20.1053C31.8095 19.4379 31.9518 18.7225 31.9518 18C31.9518 17.2775 31.8095 16.5621 31.5329 15.8946C31.2563 15.2272 30.851 14.6208 30.34 14.11Z"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M1 5C1 2.79086 2.79086 1 5 1H38C40.2091 1 42 2.79086 42 5V38C42 40.2091 40.2091 42 38 42H5C2.79086 42 1 40.2091 1 38V5Z"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                          />
-                        </svg>
-                      </button>
-                    </div> */}
                   {/* level2 */}
 
                   {/* <DavisTrailsBatch data={data} /> */}
@@ -733,117 +651,112 @@ export default function DavisTrailsDetail(rows) {
           </div>
           {/* login commont FIXME:*/}
           <DavisTrailsRating data={data} />
-
-          {/* phone_bottom */}
-          <div className={`d-flex d-lg-none ${styles.phone_bottom}`}>
-            <div className={`w-100 mb-2 ${styles.shop_btn_two}`}>
-              <div className=" d-flex flex-row align-items-center ">
-                <div className={`col-2 col-lg-1 ${styles.batch}`}>
-                  <h5 className={`ps-3 mb-0  lh-lg ${styles.btn_font}`}>
-                    梯次
-                  </h5>
-                </div>
-                <div className="col d-flex justify-content-center">
-                  <h6 className="mb-0">2023/01/01 - 2023/01/03</h6>
-                </div>
-                <button onClick={() => {}} className={`${styles.btn_style}`}>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.25 25L21.25 15L11.25 5"
-                      stroke="#6CBA7C"
-                      strokeWidth="3.75"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div className="w-100 d-flex flex-row ">
-              <div className={`col w-100 d-flex flex-row ${styles.btn_group}`}>
-                <div
-                  className={`col-4 d-flex flex-row align-items-center ${styles.btn_one_mobile}`}
-                >
-                  <button className={`${styles.btn_style}`}>
-                    <svg
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 12.5H19"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <h5 className={`col ${styles.h5_count}`}>1</h5>
-                  <button className={`${styles.btn_style}`}>
-                    <svg
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 5.5V19.5"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M5 12.5H19"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <button
-                  className={`col d-flex flex-row justify-content-center ${styles.shop_btn_mobile}`}
-                >
-                  <h5 className={`mb-0 lh-lg ${styles.btn_font}`}>
-                    加入購物車
-                  </h5>
-                  <span>
-                    <svg
-                      className="mt-2"
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 18.5L15 12.5L9 6.5"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       ))}
+      {/* phone_bottom */}
+      <div className={`d-flex d-lg-none ${styles.phone_bottom}`}>
+        <div className={`w-100 mb-2 ${styles.shop_btn_two}`}>
+          <div className=" d-flex flex-row align-items-center ">
+            <div className={`col-2 col-lg-1 ${styles.batch}`}>
+              <h5 className={`ps-3 mb-0  lh-lg ${styles.btn_font}`}>梯次</h5>
+            </div>
+            <div className="col d-flex justify-content-center">
+              <h6 className="mb-0">2023/01/01 - 2023/01/03</h6>
+            </div>
+            <button onClick={() => {}} className={`${styles.btn_style}`}>
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.25 25L21.25 15L11.25 5"
+                  stroke="#6CBA7C"
+                  strokeWidth="3.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div className="w-100 d-flex flex-row ">
+          <div className={`col w-100 d-flex flex-row ${styles.btn_group}`}>
+            <div
+              className={`col-4 d-flex flex-row align-items-center ${styles.btn_one_mobile}`}
+            >
+              <button className={`${styles.btn_style}`}>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12.5H19"
+                    stroke="#6CBA7C"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              <h5 className={`col ${styles.h5_count}`}>1</h5>
+              <button className={`${styles.btn_style}`}>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 5.5V19.5"
+                    stroke="#6CBA7C"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M5 12.5H19"
+                    stroke="#6CBA7C"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              className={`col d-flex flex-row justify-content-center ${styles.shop_btn_mobile}`}
+            >
+              <h5 className={`mb-0 lh-lg ${styles.btn_font}`}>加入購物車</h5>
+              <span>
+                <svg
+                  className="mt-2"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18.5L15 12.5L9 6.5"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

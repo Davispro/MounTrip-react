@@ -198,7 +198,7 @@ nav#loginNavbar {
 #loginNavbar .mobile_nav {
   display: none;
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   #loginNavbar .mobile_nav {
     display: block;
   }

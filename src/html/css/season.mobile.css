@@ -1,4 +1,4 @@
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   /* top bar ------------------- */
   #season_top_bar {
     height: calc(var(--navbar-mobile-height) + 500px);

@@ -721,7 +721,7 @@ section.test .test_info button {
   background-color: var(--mtgreen-1);
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   section {
     height: fit-content;
   }

@@ -451,17 +451,17 @@
 
 }
 
-/* w:390px RWD */
+/* w:391px RWD */
 
-/* w:390px RWD */
-@media screen and (max-width:390px){
+/* w:391px RWD */
+@media screen and (max-width:391px){
     section{
-        width: 390px;
+        width: 391px;
     }
     .grid-container{
         display: grid;
         width: 100%;
-        grid-template-columns: 390px ;
+        grid-template-columns: 391px ;
         grid-template-rows: 1fr ;
         gap:40px;
         padding-top: 120px;
@@ -478,14 +478,14 @@
 }
 
 /* 使用者照片區 */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .sidebar{
         width: 360px;
         display: none;
     }
 }
 /* filter */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
 
     .sidebar-menu{
         display: none;
@@ -536,7 +536,7 @@
     }
 
 }
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     .member-data{
         width: 360px;
         padding-bottom: 100px;
@@ -544,7 +544,7 @@
 }
 
 /* card */
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     
     .order-card{
         padding-left: 6px;
@@ -642,7 +642,7 @@
 }
 
 /* 折疊的內容RWD */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .dropdown-bar{
         margin-top: 6px;
         margin-bottom: 18px;
@@ -788,7 +788,7 @@
     }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
 
     .product_subtitle{
         white-space: nowrap;

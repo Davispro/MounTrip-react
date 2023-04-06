@@ -95,7 +95,7 @@ function DavisTrailsRating(props) {
     <>
       {/* login commont */}
       {/* FIXME:登錄評論 */}
-      {/* <div className="d-flex w-100 col flex-column ">
+      <div className="d-flex w-100 col flex-column ">
         <div
           className={`w-100 d-flex flex-row mb-lg-4 ${styles.login_commont_star}`}
         >
@@ -190,7 +190,7 @@ function DavisTrailsRating(props) {
         >
           發布評論
         </button>
-      </div> */}
+      </div>
 
       <section id="commont_card">
         {/*commont card */}

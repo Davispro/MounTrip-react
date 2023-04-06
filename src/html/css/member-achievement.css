@@ -412,7 +412,7 @@ section{
 }
 
 /* w:390px RWD */
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     section{
         width: 390px;
     }
@@ -437,7 +437,7 @@ section{
 
 
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .sidebar-menu{
         display: none;
     }
@@ -448,14 +448,14 @@ section{
         display: none;
     }
 }
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     .member-data{
         width: 360px;
     }
 }
 
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .title{
         display: flex;
        flex-direction: row;
@@ -472,14 +472,14 @@ section{
 }
 
 /* 使用者照片區 */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .sidebar{
         width: 360px;
         display: none;
     }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .container{
         padding: 0;
         margin-left: 0px;
@@ -540,7 +540,7 @@ section{
     }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .describ{
         height: 150px;
         margin-bottom: 20px;
@@ -568,7 +568,7 @@ section{
         /* text-align: center; */
     }
 }
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .tree-block{
         height: 576px;
         border-radius: 10px;

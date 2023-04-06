@@ -458,7 +458,7 @@
 }
 
 /* w:390px RWD */
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     section{
         width: 390px;
     }
@@ -482,7 +482,7 @@
 }
 
 /* 使用者照片區 */
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .sidebar{
         width: 360px;
     }
@@ -586,7 +586,7 @@
     
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
 
     .sidebar-menu{
         display: none;
@@ -607,7 +607,7 @@
         height: 32px;
     }
 }
-@media screen and (max-width:390px){
+@media screen and (max-width:391px){
     .member-data{
         width: 360px;
     }
@@ -737,7 +737,7 @@
 .mobile-menu{
     display: none;
 }
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
     .mobile-menu{
         display: block;
         position: relative;

@@ -31,7 +31,7 @@
   color: var(--mtgreen-1);
   font-weight: 700;
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   .modal_box {
     width: 80%;
     padding: 30px;
