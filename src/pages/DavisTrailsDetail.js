@@ -138,11 +138,14 @@ export default function DavisTrailsDetail(rows) {
             </nav>
           </div>
           {/* {console.log('Page:', data.page)} */}
+          {/* FIXME: section 沒設定100%會爆版 */}
           <section>
             <div
               className={`d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column `}
             >
-              <div className=" d-lg-flex flex-lg-row col mb-5 d-sm-flex flex-sm-column">
+              <div
+                className={`d-lg-flex flex-lg-row col mb-5 d-sm-flex flex-sm-column `}
+              >
                 <DavisTrailsImgGroup
                   filterFromBatch={filterFromBatch}
                   data={data}
