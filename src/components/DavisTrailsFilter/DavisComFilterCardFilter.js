@@ -301,7 +301,7 @@ function DavisComFilterCardFilter(props) {
                   />
                 </span>
 
-                {console.log(r.trail_sid)}
+                {/* {console.log(r.trail_sid)} */}
                 {/* <button
                   onClick={() => {
                     setCollect(toggleCollect(collect, r.sid))

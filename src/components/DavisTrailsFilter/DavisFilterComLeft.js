@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styles from '../../styles/DavisTrailsFilter.module.css'
-import { addDays } from 'date-fns'
+import DatePicker from 'react-datepicker'
 import format from 'date-fns/format'
-// import { format } from 'date-fns'
+import 'react-datepicker/dist/react-datepicker.css'
 
 function DavisFilterComLeft(props) {
   const {
@@ -16,7 +16,9 @@ function DavisFilterComLeft(props) {
   } = props
 
   const [keyword, setKeyword] = useState('')
+  const [start, setStart] = useState(new Date())
   const [startdate, setStartdate] = useState(format(new Date(), 'yyyy-MM-dd'))
+  const [end, setEnd] = useState(new Date())
   const [enddate, setEnddate] = useState(new Date(2024, 12, 31))
   const [inputText, setInputText] = useState('')
   const [newstartdate, setNewstartdate] = useState(
@@ -130,20 +132,20 @@ function DavisFilterComLeft(props) {
               </svg>
             </span>
             <div className={`${styles.input_wrap}`}>
-              <input
-                onChange={(event) => {
-                  const newDate = event.target.value
-                  setNewstartdate(newDate)
-                  console.log(event.target.value)
+              <DatePicker
+                selected={start}
+                onChange={(date) => {
+                  setStart(date)
+                  // const newDate = event.target.value
+                  setNewstartdate(date)
+                  // console.log('start:', start)
                 }}
                 className={`${styles.input_style}`}
-                // FIXME:
                 type="date"
                 id="picker"
+                placeholder={startdatepr}
               />
-              {console.log('before startdatepr:', startdatepr)}
-              {/* {console.log(format(startdatepr, 'yyyy-MM-dd'))} */}
-              {/* {console.log(startdate)} */}
+              {/* {console.log('start :', start)} */}
             </div>
           </div>
         </div>
@@ -187,15 +189,15 @@ function DavisFilterComLeft(props) {
               </svg>
             </span>
             <div className={`${styles.input_wrap}`}>
-              <input
-                onChange={(event) => {
-                  const newDate = event.target.value
-                  setNewenddate(newDate)
+              <DatePicker
+                selected={end}
+                onChange={(date) => {
+                  setEnd(date)
+                  setNewenddate(date)
                 }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
-                pseudo="-webkit-calendar-picker-indicator"
               />
             </div>
           </div>
@@ -250,7 +252,8 @@ function DavisFilterComLeft(props) {
             setKeyword(inputText)
             setStartdate(newstartdate)
             setEnddate(newenddate)
-            setPeoplecount(newpeoplecount)
+            // setPeoplecount(newpeoplecount)
+            console.log('new', newstartdate, 'end', newenddate)
           }}
         >
           搜尋
