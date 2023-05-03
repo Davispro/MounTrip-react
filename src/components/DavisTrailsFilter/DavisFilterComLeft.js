@@ -35,12 +35,6 @@ function DavisFilterComLeft(props) {
     setMaxpeplepr(peoplecount)
   }, [keyword, startdate, enddate, peoplecount])
 
-  // const filterByKeyword = (data, setKeyword) => {
-  //   return data.filter((v, i) => {
-  //     return v.trail_name.includes(setKeyword)
-  //   })
-  // }
-
   return (
     <>
       <div className={`card-body d-flex flex-column ${styles['left_card']} `}>
