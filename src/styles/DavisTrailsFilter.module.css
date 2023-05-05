@@ -88,7 +88,6 @@ main .right_card {
   justify-content: center;
 }
 
-/* FIXME:選擇日期的按鈕位置 */
 .input_wrap .input_style {
   border: none;
   display: flex;
@@ -101,9 +100,6 @@ main .right_card {
   /* user-select: initial; */
 }
 
-.input_wrap input::-webkit-calendar-picker-indicator {
-  height: 100px;
-}
 
 .input_wrap .input_style_first {
   display: flex;
@@ -114,6 +110,9 @@ main .right_card {
   height: 33px;
   outline: none;
   user-select: initial;
+}
+
+.react-datepicker__month-container{
 }
 
 .input-i {

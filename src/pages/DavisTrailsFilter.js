@@ -66,9 +66,6 @@ function DavisTrailsFilter() {
       const dateRangeMatch =
         Date.parse(v.batch_start) > Date.parse(startdatepr) &&
         Date.parse(v.batch_end) < Date.parse(enddatepr)
-      // console.log(data)
-      // console.log(Date.parse(v.batch_start))
-      // const peopleCount = v.batch_max >= maxpeplepr
 
       return keywordMatch && dateRangeMatch
     })
@@ -103,6 +100,7 @@ function DavisTrailsFilter() {
             data={data}
             keywordpr={keywordpr}
             startdatepr={startdatepr}
+            enddatepr={enddatepr}
             setKeywordpr={setKeywordpr}
             setStartdatepr={setStartdatepr}
             setEnddatepr={setEnddatepr}
@@ -142,112 +140,6 @@ function DavisTrailsFilter() {
             maxpeplepr={maxpeplepr}
             filterByKeyword={filterByKeyword}
           />
-          {/*  phone_card*n */}
-          {/* <div className={`d-flex flex-column ${styles.phone_card}`}>
-            <div className={`${styles.text_re}`}>
-              <div className={`${styles.trails_img_wrap}`}>
-                <img
-                  className={`w-100 ${styles.img_style}`}
-                  src="./imgs/Davis/5-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div className={`${styles.img_text}`}>
-                <p className={`${styles.rate}`}>4.5</p>
-                <div className={`d-flex flex-row ${styles.p_wrap}`}>
-                  <p className={`${styles.difficulty}`}>難度</p>
-                  <p className={`${styles.difficulty_en}`}>EASY</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-100 d-flex flex-row justify-content-between">
-              <div>
-                <h6 className={`mb-0 ${styles.phone_h6_sub_t}`}>
-                  草嶺古道｜探索新北一日遊
-                </h6>
-                <p className={`mb-0 ${styles.phone_p_tag}`}>新北市雙溪區</p>
-              </div>
-              <div>
-                <p className={`mb-0 ${styles.phone_p_ntd}`}>NTD</p>
-                <h6 className={`mb-0 ${styles.phone_h6_price}`}>1300</h6>
-              </div>
-            </div>
-          </div> */}
-
-          {/* mobile_phone bottom > pagination */}
-          {/* <div
-            className={`page-bar col d-flex align-self-center ${styles.details_pagination}`}
-          >
-            <nav
-              className={`${styles.pagination_nav}`}
-              aria-label=" Page navigation example"
-            >
-              <ul className="pagination ">
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    {' '}
-                    <span aria-hidden="true">&laquo;</span>
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    1
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    2
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <span className={`page-link fw-bold ${styles.a_decoration}`}>
-                    {' '}
-                    ...{' '}
-                  </span>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    9
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    10
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link ${styles.a_decoration}`}
-                    aria-label="Next"
-                    to="/"
-                  >
-                    {' '}
-                    <span aria-hidden="true">&raquo;</span>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div> */}
         </div>
       </main>
     </>

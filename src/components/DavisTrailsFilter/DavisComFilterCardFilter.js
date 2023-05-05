@@ -134,12 +134,25 @@ function DavisComFilterCardFilter(props) {
     }
   }, [setCurrentPage])
 
+  //
+  // const filterthesame = (row_data) => {
+  //   return row_data.filter((v, i) => {
+  //     v.trail_sid !== v.trail_sid
+  //   })
+  // }
+
+  const uniqueData = (data) => {
+    return data.filter((item, index, array) => {
+      return array.findIndex((i) => i.trail_sid === item.trail_sid) === index
+    })
+  }
+  // filterByKeyword
   return (
     <>
-      {/* {console.log(startdatepr)} */}
+      {console.log(uniqueData(collect))}
       {/* {data.rows.map((r) => ( */}
       {dataSubset(
-        filterByKeyword(collect, keywordpr, startdatepr, enddatepr)
+        uniqueData(filterByKeyword(collect, keywordpr, startdatepr, enddatepr))
       ).map((r) => (
         <div className="col" key={r.sid}>
           {/* {console.log(

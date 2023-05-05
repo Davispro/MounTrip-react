@@ -9,6 +9,7 @@ function DavisFilterComLeft(props) {
     data,
     keywordpr,
     startdatepr,
+    enddatepr,
     setKeywordpr,
     setStartdatepr,
     setEnddatepr,
